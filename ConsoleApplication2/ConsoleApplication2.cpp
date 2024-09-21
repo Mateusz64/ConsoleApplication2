@@ -10,4 +10,6 @@ int main()
     cout << "Hello World!\n";
 
     cout << "cokolwiek" << endl;
+
+    cout << "omg!" << endl;
 }
