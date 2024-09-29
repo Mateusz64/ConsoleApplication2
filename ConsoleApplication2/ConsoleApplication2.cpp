@@ -1,15 +1,29 @@
-﻿// ConsoleApplication2.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
+﻿#include <iostream>
+#include <SFML/Graphics.hpp>
+#include <vector>
 
-#include <iostream>
-
-using namespace std;
+#include "Player.h"
 
 int main()
 {
-    cout << "Hello World!\n";
+    Player player;
+    
+    player.occupy();
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
 
-    cout << "cokolwiek" << endl;
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
 
-    cout << "wow!" << endl;
+        player.occupy();
+
+        window.clear();
+        
+        window.display();
+    }
 }
